@@ -13,7 +13,7 @@ class CardFeed extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-          margin: const EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.all(10),
           width: 800,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -28,7 +28,7 @@ class CardFeed extends StatelessWidget {
               children: [
                 Container(
                   padding: const EdgeInsets.all(10),
-                  child: TitleCard(name: card["name"]!),
+                  child: TitleCard(avatar: card["avatar"]!, bgColor: card["bgColor"]!, name: card["name"]!),
                 ),
                 DescriptionCard(description: card["description"]!),
                 ImageCard(image: card["image"]!),
@@ -38,4 +38,21 @@ class CardFeed extends StatelessWidget {
           )),
     );
   }
+}
+
+// Mapa de color para los avatares
+Map<String, Color> colorMap = {
+  "blue": Colors.blue,
+  "red": Colors.red,
+  "green": Colors.green,
+  "yellow": Colors.yellow,
+  "purple": Colors.purple,
+  "amber": Colors.amber,
+  "orange": Colors.orange,
+  "white": Colors.white,
+  "grey": Colors.grey,
+};
+
+Color getColorFromString(String colorName) {
+  return colorMap[colorName] ?? Colors.grey; // Color por defecto si no se encuentra
 }

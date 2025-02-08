@@ -21,7 +21,6 @@ class ImageCard extends StatelessWidget {
                   BorderRadius.circular(20), // Debe coincidir con el de arriba
               child: Image.asset(
                 image,
-                
                 fit: BoxFit.cover,
               ),
             )));
